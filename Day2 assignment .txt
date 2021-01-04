@@ -1,0 +1,113 @@
+Data astructure and algorithms assignment 
+
+Day 2
+
+Answer to Question No.1
+
+deleting the first element from an array.
+
+a -> array  
+n-> number of elements
+
+for (int i=1;i<n;i++)
+{
+  a[i-1]=a[i];
+}
+
+To delete element from any position
+
+    :
+    int main()
+{   
+    int a[100],x,i;
+    cout<<"enter the no. of elements(max 100): ";
+    cin>>x;
+    for(i=0;i<x;i++)
+    {
+        cout<<"enter "<<i+1<<" element: ";
+        cin>>a[i];
+        cout<<endl;
+    }
+    cout<<"your array: "<<endl;
+    for(i=0;i<x;i++)
+    {
+        cout<<a[i]<<endl;
+    }
+    cout<<"enter the element you want to delete: ";
+    int b,flag,pos;
+    cin>>b;
+    for(i=0;i<x;i++)
+    {
+        if(b==a[i])
+        {
+            flag=1; pos=i;
+        }
+        else
+        {
+            flag=0;
+        }
+    }
+    if(flag==0)
+    {
+        cout<<"element not found nothing to delete....";
+    }
+    for(i=0;i<x-1;i++)
+    {
+        if(i<pos)
+        {
+            a[i];
+        }
+    else if(i>=pos)
+    {
+        a[i]=a[i+1];
+    }
+    }
+    cout<<"new array:"<<endl;
+    for(i=0;i<x-1;i++)
+    {
+        cout<<a[i]<<endl;
+    }
+    return 0;
+}	
+
+
+Question No2 , Answer
+
+#include<bits/stdc++.h> 
+using namespace std; 
+  
+
+
+void RightRotate(int a[], int n, int k)  // Function to rightRotate array 
+{ 
+      
+    // If rotation is greater  
+    // than size of array 
+    k = k % n; 
+  
+    for(int i = 0; i < n; i++) 
+    { 
+       if(i < k) 
+       { 
+             
+           cout << a[n + i - k] << " "; 
+       } 
+       else
+       { 
+             
+           // Prints array after 'k' elements 
+           cout << (a[i - k]) << " "; 
+       } 
+    } 
+    cout << "\n"; 
+} 
+      
+// Driver code 
+int main() 
+{ 
+    int Array[] = { 1, 2, 3, 4, 5 }; 
+    int N = sizeof(Array) / sizeof(Array[0]); 
+    int K = 2; 
+      
+    RightRotate(Array, N, K); 
+} 

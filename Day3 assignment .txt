@@ -1,0 +1,64 @@
+
+Data Structure and algorithms Day3 assignments
+
+
+1)
+
+// C++ program for insertion in a single linked
+
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+// A linked list Node
+struct Node {
+    int data;
+    struct Node* next;
+};
+ 
+// Size of linked list
+int size = 0;
+ 
+// function to create and return a Node
+Node* insert_any(int data)
+{
+    // allocating space
+    Node* newNode = new Node();
+ 
+    // inserting the required data
+    newNode->data = data;
+    newNode->next = NULL;
+    return newNode;
+}
+
+
+
+
+2) deleting a node from the beginning of the linked list.
+
+
+void del_beg()
+{
+struct node *temp;
+
+temp = start;
+start = start->next;
+
+free(temp);
+printf("nThe Element deleted Successfully ");
+}
+
+
+
+3) deleting a node from the end of the linked list.
+
+ static Node delete_end(Node Head) 
+    { 
+        if (head == null) 
+            return null; 
+  
+        if (head.next == null) { 
+            return null; 
+        } 
